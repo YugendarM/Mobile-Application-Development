@@ -188,6 +188,12 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 ```
+
+Developed by: Yugendar M
+
+Registeration Number : 212221040186
+
+
 ## OUTPUT
 
 ![image](https://github.com/Siddarthan999/MAD-EXP-6-Design-an-Android-Application-Send-SMS-using-Intent/assets/91734840/643e440e-f4a4-4cdb-a5a7-1b3c4a4981f5)
