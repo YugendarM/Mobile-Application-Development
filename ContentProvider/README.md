@@ -132,6 +132,12 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 ```
+
+Developed by: Yugendar M
+
+Registeration Number : 212221040186
+
+
 ## OUTPUT
 
 ![image](https://github.com/Siddarthan999/MAD-EXP-5-Create-Your-Own-Content-Providers-to-get-Contacts-details/assets/91734840/2ca29669-80b7-40da-9bb1-3bebbe47531e)
