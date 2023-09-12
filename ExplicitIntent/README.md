@@ -203,6 +203,11 @@ public class MainActivity2 extends AppCompatActivity {
     }
 }
 ```
+
+Developed by: Yugendar M
+
+Registeration Number : 212221040186
+
 ## OUTPUT
 ![image](https://github.com/Siddarthan999/MAD-EXP-4-Finding-Factorial-of-a-Number-using-Explicit-Intents/assets/91734840/823933f2-eceb-4b50-b492-ea3e7fd50921)
 
