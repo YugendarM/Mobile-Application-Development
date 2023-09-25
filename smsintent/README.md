@@ -25,13 +25,7 @@ Step 6: Send SMS and Display details give in MainActivity file.
 Step 7: Save and run the application.
 
 ## PROGRAM:
-```
-/*
-Program to create and design an android application Send SMS using Intent.
-Developed by: N.SIDDARTHAN
-Registration Number: 212221040154
-*/
-```
+
 AndroidManifest.xml :
 ```
 <?xml version="1.0" encoding="utf-8"?>
