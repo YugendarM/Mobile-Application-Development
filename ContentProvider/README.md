@@ -25,13 +25,7 @@ Step 6: Get contacts details and Display details give in MainActivity file.
 Step 7: Save and run the application.
 
 ## PROGRAM:
-```
-/*
-Program to print the text create your own content providers to get contacts details.
-Developed by: N.SIDDARTHAN
-Registration Number: 212221040154
-*/
-```
+
 AndroidManifest.xml :
 ```
 <?xml version="1.0" encoding="utf-8"?>
