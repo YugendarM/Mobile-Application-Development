@@ -28,7 +28,7 @@ Step 7: Save and run the application.
 ```
 /*
 Program to print the text “calculator operation”.
-Developed by: Yugendar M
+Developed by: M. Yugendar 
 Registration Number: 212221040186
 */
 ```
