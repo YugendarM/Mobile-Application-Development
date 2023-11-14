@@ -25,8 +25,8 @@ Step 7: Save and run the application.
 ```
 /*
 Program to display animation operation”.
-Developed by:naveen
-Registeration Number :212221040114
+Developed by:Yugendar M
+Registeration Number :212221040186
 */
 ```
 ## activity_main.xml
