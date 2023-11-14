@@ -1,4 +1,4 @@
-# MAD-EXP-9-Develop-a-Simple-Calculator-in-Android-Studio
+# Ex.No:9 Develop a simple calculator using android studio.
 
 ## AIM:
 
@@ -10,7 +10,7 @@ Android Studio(Latest Version)
 
 ## ALGORITHM:
 
-Step 1: Open Android Studio and then click on File -> New -> New project.
+Step 1: Open Android Stdio and then click on File -> New -> New project.
 
 Step 2: Then type the Application name as calculator and click Next. 
 
@@ -28,14 +28,15 @@ Step 7: Save and run the application.
 ```
 /*
 Program to print the text “calculator operation”.
-Developed by: M. Yugendar 
-Registration Number: 212221040186
+Developed by:Yugendar M
+Registeration Number :21221040186
 */
 ```
-activity_main.xml :
+## activitymain.xml
 ```
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -49,6 +50,7 @@ activity_main.xml :
         android:ems="10"
         android:hint="Second Number"
         android:inputType="numberDecimal"
+        android:textColorHint="#8D6E63"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -64,6 +66,7 @@ activity_main.xml :
         android:ems="10"
         android:hint="First Number"
         android:inputType="numberDecimal"
+        android:textColorHint="#8D6E63"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -71,7 +74,6 @@ activity_main.xml :
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.185"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
     <TextView
         android:id="@+id/result"
         android:layout_width="404dp"
@@ -83,7 +85,6 @@ activity_main.xml :
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.366" />
-
     <Button
         android:id="@+id/btnsubs"
         android:layout_width="80dp"
@@ -96,7 +97,6 @@ activity_main.xml :
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.466" />
-
     <Button
         android:id="@+id/btndiv"
         android:layout_width="80dp"
@@ -109,7 +109,6 @@ activity_main.xml :
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.466" />
-
     <Button
         android:id="@+id/btnadd"
         android:layout_width="80dp"
@@ -122,7 +121,6 @@ activity_main.xml :
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.466" />
-
     <Button
         android:id="@+id/btnmult"
         android:layout_width="80dp"
@@ -135,7 +133,6 @@ activity_main.xml :
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.466" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -149,13 +146,11 @@ activity_main.xml :
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.073" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-MainActivity.java :
+## MainActivity.java
 ```
-package com.example.simplecalculator;
-
+package com.example.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -170,105 +165,85 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        btnadd=findViewById(R.id.btnadd);
+        setContentView(R.layout.activity_main);btnadd=findViewById(R.id.btnadd);
         btnsubs=findViewById(R.id.btnsubs);
         btndiv=findViewById(R.id.btndiv);
         btnmult=findViewById(R.id.btnmult);
-
         txt1=findViewById(R.id.txt1);
         txt2=findViewById(R.id.txt2);
-
         result=findViewById(R.id.result);
-
         btnadd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Checking Input First Is Blank Or Not
                 if (txt1.getText().toString().equals("")) {
-                    // Showing Toast (Message)
-                    Toast.makeText(MainActivity.this, "Please Enter Number", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Please Enter Number",
+                            Toast.LENGTH_SHORT).show();
                 } else if (txt2.getText().toString().equals("")) {
-                    Toast.makeText(MainActivity.this, "Please Enter Number", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Please Enter Number",
+                            Toast.LENGTH_SHORT).show();
                 }
-
-                // Both Inputs Are Not Blank , Starting Calculation
                 else {
                     float a, b, c;
                     a = Float.parseFloat(txt1.getText().toString());
                     b = Float.parseFloat(txt2.getText().toString());
-                    c = a + b; // Using Third Variable To Store Output Value
+                    c = a + b;
                     result.setText("The Addition Result Is " + c);
-
                 }
-
             }
         });
-
         btnsubs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Checking Input First Is Blank Or Not
                 if (txt1.getText().toString().equals("")) {
-                    // Showing Toast (Message)
-                    Toast.makeText(MainActivity.this, "Please Enter Number", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Please Enter Number",
+                            Toast.LENGTH_SHORT).show();
                 } else if (txt2.getText().toString().equals("")) {
-                    Toast.makeText(MainActivity.this, "Please Enter Number", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Please Enter Number",
+                            Toast.LENGTH_SHORT).show();
                 }
-
-                // Both Inputs Are Not Blank , Starting Calculation
                 else {
                     float a, b, c;
                     a = Float.parseFloat(txt1.getText().toString());
                     b = Float.parseFloat(txt2.getText().toString());
-                    c = a - b; // Using Third Variable To Store Output Value
+                    c = a - b;
                     result.setText("The Subtraction Result Is " + c);
-
                 }
             }
         });
         btnmult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Checking Input First Is Blank Or Not
                 if (txt1.getText().toString().equals("")) {
-                    // Showing Toast (Message)
-                    Toast.makeText(MainActivity.this, "Please Enter Number", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Please Enter Number",
+                            Toast.LENGTH_SHORT).show();
                 } else if (txt2.getText().toString().equals("")) {
-                    Toast.makeText(MainActivity.this, "Please Enter Number", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Please Enter Number",
+                            Toast.LENGTH_SHORT).show();
                 }
-
-                // Both Inputs Are Not Blank , Starting Calculation
                 else {
                     float a, b, c;
                     a = Float.parseFloat(txt1.getText().toString());
                     b = Float.parseFloat(txt2.getText().toString());
-                    c = a*b; // Using Third Variable To Store Output Value
+                    c = a*b;
                     result.setText("The Multiplication Result Is " + c);
-
-                }
-            }
+                } }
         });
         btndiv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Checking Input First Is Blank Or Not
                 if (txt1.getText().toString().equals("")) {
-                    // Showing Toast (Message)
-                    Toast.makeText(MainActivity.this, "Please Enter Number", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Please Enter Number",
+                            Toast.LENGTH_SHORT).show();
                 } else if (txt2.getText().toString().equals("")) {
-                    Toast.makeText(MainActivity.this, "Please Enter Number", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Please Enter Number",
+                            Toast.LENGTH_SHORT).show();
                 }
-
-                // Both Inputs Are Not Blank , Starting Calculation
                 else {
                     float a, b, c;
                     a = Float.parseFloat(txt1.getText().toString());
                     b = Float.parseFloat(txt2.getText().toString());
-                    c = a/b; // Using Third Variable To Store Output Value
+                    c = a/b;
                     result.setText("The Division Result Is " + c);
-
                 }
             }
         });
@@ -277,10 +252,11 @@ public class MainActivity extends AppCompatActivity {
 ```
 ## OUTPUT
 
-![image](https://github.com/Siddarthan999/MAD-EXP-9-Develop-a-Simple-Calculator-in-Android-Studio/assets/91734840/ebe5fd82-aeae-469a-995d-855b091ec8c2)
-![image](https://github.com/Siddarthan999/MAD-EXP-9-Develop-a-Simple-Calculator-in-Android-Studio/assets/91734840/f0b50fc7-d5e5-4458-9aef-9796100aa6f4)
-![image](https://github.com/Siddarthan999/MAD-EXP-9-Develop-a-Simple-Calculator-in-Android-Studio/assets/91734840/6b8859db-d384-4259-b1e2-7b8251df1d9a)
-![image](https://github.com/Siddarthan999/MAD-EXP-9-Develop-a-Simple-Calculator-in-Android-Studio/assets/91734840/dc5bb770-2d87-4b68-91d3-1dab1621c271)
+![image](https://github.com/Naveen-154/Mobile-Application-Development/assets/114643271/40a0d11b-2858-4d4e-b0e4-6d2efcf3c82d)
+
+![image](https://github.com/Naveen-154/Mobile-Application-Development/assets/114643271/30fdb3d7-e227-4090-a2b5-8812dda25674)
+![image](https://github.com/Naveen-154/Mobile-Application-Development/assets/114643271/8f68671f-161e-440a-af7b-b5481368360c)
+
 
 ## RESULT
-Thus, a Simple Android Application develop a program to create simple calculator in Android Studio is developed and executed successfully.
+Thus a Simple Android Application develop a program to create simple calculator in Android Studio is developed and executed successfully.
