@@ -1,4 +1,5 @@
-# MAD-EXP-8-Develop-an-Android-Application-to-Display-the-Images-using-Gallery-Control
+# Ex.No:8 To create a gallery control using android studio to display images or photos.
+
 
 ## AIM:
 
@@ -9,33 +10,31 @@ To create a gallery control using android studio to display images or photos.
 Latest Version Android Studio
 
 ## ALGORITHM:
-
+```
 Step 1: Open Android Studio and then click on File -> New -> New project.
-
-Step 2: Then type the Application name as HelloWorld and click Next. 
-
+Step 2: Then type the Application name as “gallery control” and click Next.
 Step 3: Then select the Minimum SDK as shown below and click Next.
-
 Step 4: Then select the Empty Activity and click Next. Finally click Finish.
-
 Step 5: Design layout in activity_main.xml.
+Step 6: Get contacts details and Display details give in MainActivity file.
+Step 7: Save and run the application..
+```
 
-Step 6: Display message give in MainActivity file.
 
-Step 7: Save and run the application.
 
 ## PROGRAM:
 ```
 /*
 Program to print the text “GalleryControl”.
-Developed by: Yugendar M
-Registration Number: 212221040186
+Developed by:Yugendar M
+Registeration Number : 212221040186
 */
 ```
-activity_main.xml :
+## activitymain.xml
 ```
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -46,12 +45,12 @@ activity_main.xml :
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
         app:layout_constraintBottom_toTopOf="@+id/languagesGallery"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.413"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck"
         tools:srcCompat="@tools:sample/avatars" />
     <Gallery
         android:id="@+id/languagesGallery"
@@ -65,63 +64,53 @@ activity_main.xml :
         android:unselectedAlpha="50"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-MainActivity.java :
+## MainActivity.java
 ```
 package com.example.gallerycontrol;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Gallery;
 import android.widget.ImageView;
-
 public class MainActivity extends AppCompatActivity {
     Gallery simpleGallery;
     CustomizedGalleryAdapter customGalleryAdapter;
     ImageView selectedImageView;
-    int[] images = {R.drawable.c,R.drawable.c_1,R.drawable.java,R.drawable.python,R.drawable.r,R.drawable.js};
+    int[] images =
 
+            {R.drawable.c,R.drawable.css,R.drawable.java,R.drawable.python,R.drawable.html,R.drawable.js};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         simpleGallery = (Gallery) findViewById(R.id.languagesGallery);
-// get the reference of ImageView
         selectedImageView = (ImageView) findViewById(R.id.imageView);
-// initialize the adapter
         customGalleryAdapter = new CustomizedGalleryAdapter(getApplicationContext(), images);
-// set the adapter for gallery
         simpleGallery.setAdapter(customGalleryAdapter);
-// Let us do item click of gallery and image can be identified by its position
         simpleGallery.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-// Whichever image is clicked, that is set in the selectedImageView
-// position will indicate the location of image
                 selectedImageView.setImageResource(images[position]);
             }
         });
     }
 }
 ```
-CustomizedGalleryAdapter.java :
+## CustomizedGalleryAdapter.java
 ```
 package com.example.gallerycontrol;
-
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Gallery;
 import android.widget.ImageView;
-
 public class CustomizedGalleryAdapter extends BaseAdapter {
     private Context context;
     private int[] images;
@@ -129,36 +118,30 @@ public class CustomizedGalleryAdapter extends BaseAdapter {
         context = c;
         this.images = images;
     }
-    // returns the number of images, in our example it is 10
     public int getCount() {
         return images.length;
     }
-    // returns the Item of an item, i.e. for our example we can get the image
     public Object getItem(int position) {
         return position;
     }
-    // returns the ID of an item
     public long getItemId(int position) {
         return position;
     }
-    // returns an ImageView view
     public View getView(int position, View convertView, ViewGroup parent) {
-// position argument will indicate the location of image
-// create a ImageView programmatically
         ImageView imageView = new ImageView(context);
-// set image in ImageView
         imageView.setImageResource(images[position]);
-// set ImageView param
         imageView.setLayoutParams(new Gallery.LayoutParams(200, 200));
         return imageView;
-    }
-}
+    } }
 ```
-## OUTPUT
 
-![image](https://github.com/Siddarthan999/MAD-EXP-8-Develop-an-Android-Application-to-Display-the-Images-using-Gallery-Control/assets/91734840/31910ea8-3186-4fb4-8aab-d245ad2fecff)
-![image](https://github.com/Siddarthan999/MAD-EXP-8-Develop-an-Android-Application-to-Display-the-Images-using-Gallery-Control/assets/91734840/dda1b1f9-968c-4ae4-af4e-bc830b9213a3)
-![image](https://github.com/Siddarthan999/MAD-EXP-8-Develop-an-Android-Application-to-Display-the-Images-using-Gallery-Control/assets/91734840/ec9b4462-4ada-4ad6-8cc4-56d7762f4b88)
+## OUTPUT
+![image](https://github.com/Naveen-154/Mobile-Application-Development/assets/114643271/ab1a8e0b-7ff8-4fe5-b6f3-25e81601029f)
+
+![image](https://github.com/Naveen-154/Mobile-Application-Development/assets/114643271/31ccc3e3-0a13-4ffe-854b-c11cde7dd5bf)
+
+![image](https://github.com/Naveen-154/Mobile-Application-Development/assets/114643271/e0f3faf9-74ba-467a-a0bd-ca511f74bf39)
+
 
 ## RESULT
-Thus, a Simple Android Application to create a gallery control using android studio to display images or photos is developed and executed successfully.
+Thus a Simple Android Application to create a gallery control using android studio to display images or photos is developed and executed successfully.
